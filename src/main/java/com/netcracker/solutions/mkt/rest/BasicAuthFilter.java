@@ -16,6 +16,7 @@ public class BasicAuthFilter implements Filter {
         HttpServletRequest httpReq = (HttpServletRequest) request;
         HttpServletResponse httpResp = (HttpServletResponse) response;
 
+
         String authHeader = httpReq.getHeader("Authorization");
         if (authHeader != null && authHeader.startsWith("Basic ")) {
             String base64Credentials = authHeader.substring("Basic ".length());
